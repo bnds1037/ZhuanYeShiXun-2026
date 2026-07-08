@@ -1,0 +1,51 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://default"]
+
+[resource]
+master_bus_name = "Master"
+buses = [
+  {
+    "name": "Master",
+    "mute": false,
+    "solo": false,
+    "volume_db": 0.0,
+    "pan_db": 0.0,
+    "effect_count": 0,
+    "effects": [],
+    "route_count": 0,
+    "routes": []
+  },
+  {
+    "name": "SFX",
+    "mute": false,
+    "solo": false,
+    "volume_db": 0.0,
+    "pan_db": 0.0,
+    "effect_count": 0,
+    "effects": [],
+    "route_count": 1,
+    "routes": [
+      {
+        "dest_bus": "Master",
+        "volume_db": 0.0,
+        "mute": false
+      }
+    ]
+  },
+  {
+    "name": "Music",
+    "mute": false,
+    "solo": false,
+    "volume_db": -6.0,
+    "pan_db": 0.0,
+    "effect_count": 0,
+    "effects": [],
+    "route_count": 1,
+    "routes": [
+      {
+        "dest_bus": "Master",
+        "volume_db": 0.0,
+        "mute": false
+      }
+    ]
+  }
+]
