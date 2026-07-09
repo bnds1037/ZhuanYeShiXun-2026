@@ -10,13 +10,35 @@ config_version=5
 
 [application]
 
-config/name="SimpleBreakout"
-run/main_scene="res://scenes/Main.tscn"
-config/features=PackedStringArray("4.7")
-display/window/size/viewport_width=800
-display/window/size/viewport_height=600
-display/window/title="Simple Breakout"
+config/name="TILEMAP 2.0"
+run/main_scene="uid://dsmmktqfp1h6q"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+_mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
-project/assembly_name="SimpleBreakout"
+project/assembly_name="TILEMAP 2.0"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_ai/plugin.cfg")
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

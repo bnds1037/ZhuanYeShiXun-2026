@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cah5wjh7sgde5"]
+
+[ext_resource type="Script" uid="uid://dt8ggn6fdc1l" path="res://base_boss_battle.gd" id="1_jorkv"]
+[ext_resource type="Texture2D" uid="uid://byl4tktejfbvj" path="res://僵尸.png" id="2_d4nbt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1kyf2"]
+radius = 85.02353
+
+[node name="BOSS2" type="Area2D" unique_id=1668299610]
+position = Vector2(600, 300)
+script = ExtResource("1_jorkv")
+boss_name = "百战僵尸统领·骨煞"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841039671]
+shape = SubResource("CircleShape2D_1kyf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=874712949]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_d4nbt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
