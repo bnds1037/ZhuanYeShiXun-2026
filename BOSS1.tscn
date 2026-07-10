@@ -1,10 +1,130 @@
 [gd_scene format=3 uid="uid://df1or1oedcort"]
 
 [ext_resource type="Script" uid="uid://dt8ggn6fdc1l" path="res://base_boss_battle.gd" id="1_8eufc"]
-[ext_resource type="Texture2D" uid="uid://cqgccr3yot03f" path="res://青铜巨兽.png" id="2_ncjw6"]
+[ext_resource type="Texture2D" uid="uid://bgrv6id3upvke" path="res://teammate_assets/boss image/微信图片_20260708085435-removebg-preview.png" id="2_8eufc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1kyf2"]
-radius = 85.02353
+radius = 130.31117
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mdef"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(0, 0, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtq1p"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(84, 0, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eogj5"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(168, 0, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oto0q"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(252, 0, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t5yg"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(0, 92, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evg2d"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(84, 92, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvnfi"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(168, 92, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpcs5"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(252, 92, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o143h"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(0, 184, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqob8"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(84, 184, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ooxm"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(168, 184, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs6jm"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(252, 184, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21r0p"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(0, 276, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tco0j"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(84, 276, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7syo5"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(168, 276, 84, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlfx"]
+atlas = ExtResource("2_8eufc")
+region = Rect2(252, 276, 84, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncjw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mdef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eogj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oto0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t5yg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evg2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvnfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpcs5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o143h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqob8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ooxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs6jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21r0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tco0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7syo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wlfx")
+}],
+"loop": 1,
+"name": &"Boss",
+"speed": 6.0
+}]
 
 [node name="BOSS1" type="Area2D" unique_id=1668299610]
 position = Vector2(600, 300)
@@ -16,6 +136,13 @@ shape = SubResource("CircleShape2D_1kyf2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=874712949]
 scale = Vector2(0.15, 0.155)
-texture = ExtResource("2_ncjw6")
+
+[node name="BOSS1" type="AnimatedSprite2D" parent="." unique_id=234800029]
+texture_filter = 1
+position = Vector2(0.99998474, -7.6293945e-06)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_ncjw6")
+animation = &"Boss"
+frame_progress = 0.24021456
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

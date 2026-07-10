@@ -1,10 +1,88 @@
 [gd_scene format=3 uid="uid://cah5wjh7sgde5"]
 
 [ext_resource type="Script" uid="uid://dt8ggn6fdc1l" path="res://base_boss_battle.gd" id="1_jorkv"]
-[ext_resource type="Texture2D" uid="uid://byl4tktejfbvj" path="res://僵尸.png" id="2_d4nbt"]
+[ext_resource type="Texture2D" uid="uid://dbacaksk3bs1s" path="res://teammate_assets/boss image/微信图片_20260708085550-removebg-preview.png" id="2_jorkv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1kyf2"]
-radius = 85.02353
+radius = 98.005104
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0js2"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(0, 0, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avci5"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(135, 0, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ronl7"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(270, 0, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ogf"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(405, 0, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec8cq"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(540, 0, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sehhv"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(0, 184, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rnm8"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(135, 184, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ou5s"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(270, 184, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj6ow"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(405, 184, 135, 184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65veo"]
+atlas = ExtResource("2_jorkv")
+region = Rect2(540, 184, 135, 184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4nbt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0js2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avci5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ronl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ogf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec8cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sehhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rnm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ou5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj6ow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65veo")
+}],
+"loop": 1,
+"name": &"Boss",
+"speed": 7.0
+}]
 
 [node name="BOSS2" type="Area2D" unique_id=1668299610]
 position = Vector2(600, 300)
@@ -12,10 +90,18 @@ script = ExtResource("1_jorkv")
 boss_name = "百战僵尸统领·骨煞"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1841039671]
+position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_1kyf2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=874712949]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_d4nbt")
+
+[node name="BOSS2" type="AnimatedSprite2D" parent="." unique_id=1412973019]
+texture_filter = 1
+position = Vector2(5, -3)
+scale = Vector2(0.8, 0.796)
+sprite_frames = SubResource("SpriteFrames_d4nbt")
+animation = &"Boss"
+frame_progress = 0.6733088
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
