@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dl143bkt70btf"]
+
+[ext_resource type="Script" uid="uid://t80803g8g73y" path="res://src/entities/enemies/mob_zombie/mob_zombie.gd" id="1_mob"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0dhu"]
+radius = 3.1622777
+
+[node name="MobZombie" type="CharacterBody2D" unique_id=4911057]
+script = ExtResource("1_mob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=230663431]
+shape = SubResource("CircleShape2D_b0dhu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D" unique_id=1628721593]
+
+[node name="Body" type="ColorRect" parent="." unique_id=215888622]
+color = Color(0.35, 0.45, 0.3, 1)
+
+[node name="NameLabel" type="Label" parent="." unique_id=708115484]
+offset_top = -30.0
+offset_right = 100.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.8, 0.7, 0.5, 1)
+theme_override_font_sizes/font_size = 14
+text = "僵尸"
+horizontal_alignment = 1
